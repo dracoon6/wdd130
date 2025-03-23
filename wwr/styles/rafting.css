@@ -1,0 +1,145 @@
+﻿:root {
+    --primary-color: #003f5c;
+    --secondary-color: #f9f4f4;
+    --accent1-color: #bc5090;
+    --accent2-color: #008b8b;
+    --heading-font: 'Montserrat', sans-serif;
+    --text-font: 'Open Sans', sans-serif;
+}
+
+body {
+    font-family: var(--text-font);
+    margin: 0;
+    padding: 0;
+    color: #333;
+    max-width: 1200px; /* Added a max-width for better readability on larger screens */
+    margin: 0 auto; /*Centers the whole layout */
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--secondary-color);
+    padding: 1rem 0;
+}
+
+    header img {
+        width: 200px;
+    }
+
+    header nav {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+        header nav a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+            header nav a:hover {
+                color: var(--accent1-color);
+            }
+
+main {
+    padding: 2rem;
+    position: relative; /* Needed for absolute positioning of elements inside */
+}
+
+.hero {
+    position: relative;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+    .hero img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .hero h1 {
+        position: absolute;
+        top: 20px;
+        left: 0;
+        right: 0;
+        color: white;
+        font-size: 2.5rem;
+        font-family: var(--heading-font);
+        background-color: rgba(0, 0, 0, 0.5); /* Added background for better readability */
+        padding: 1rem;
+    }
+
+    .hero article {
+        position: absolute;
+        bottom: 20px;
+        left: 10px;
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 1rem;
+        max-width: 400px;
+    }
+
+        .hero article img {
+            float: right;
+            margin-left: 1rem;
+            max-width: 150px;
+        }
+
+        .hero article p {
+            margin: 0;
+            line-height: 1.5;
+        }
+
+section {
+    margin-bottom: 2rem;
+}
+
+    section h2 {
+        font-size: 2rem;
+        color: var(--accent1-color);
+        font-family: var(--heading-font);
+        margin-bottom: 1rem;
+    }
+
+    section img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 1rem;
+    }
+
+    section:last-child {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+    }
+
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+    footer p {
+        margin: 0;
+    }
+
+    footer img {
+        width: 30px;
+        height: 30px;
+    }
+
+    footer a {
+        text-decoration: none; /* Removes underlines from social media links */
+    }
+
+        footer a:hover {
+            opacity: 0.8;
+        }
