@@ -12,13 +12,13 @@ body {
     margin: 0;
     padding: 0;
     color: #333;
-    max-width: 1200px; /* Added a max-width for better readability on larger screens */
-    margin: 0 auto; /*Centers the whole layout */
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 header {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 200px 1fr;
     align-items: center;
     background-color: var(--secondary-color);
     padding: 1rem 0;
@@ -30,9 +30,18 @@ header {
 
     header nav {
         display: flex;
-        gap: 1rem;
-        margin-top: 1rem;
+        justify-content: flex-end;
+        margin-top: 0;
     }
+
+        header nav ul {
+            display: flex;
+            gap: 1rem;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
 
         header nav a {
             text-decoration: none;
@@ -46,7 +55,7 @@ header {
 
 main {
     padding: 2rem;
-    position: relative; /* Needed for absolute positioning of elements inside */
+    position: relative;
 }
 
 .hero {
@@ -69,7 +78,7 @@ main {
         color: white;
         font-size: 2.5rem;
         font-family: var(--heading-font);
-        background-color: rgba(0, 0, 0, 0.5); /* Added background for better readability */
+        background-color: rgba(0, 0, 0, 0.5);
         padding: 1rem;
     }
 
@@ -110,10 +119,40 @@ section {
         margin-bottom: 1rem;
     }
 
-    section:last-child {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 1rem;
+#history-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+    #history-section div {
+        padding: 1rem;
+    }
+
+    #history-section img {
+        width: 100%;
+        height: auto;
+    }
+
+#adventures-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+    #adventures-section figure {
+        margin: 0;
+    }
+
+    #adventures-section img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    #adventures-section figcaption {
+        text-align: center;
+        margin-top: 0.5rem;
     }
 
 footer {
@@ -131,13 +170,18 @@ footer {
         margin: 0;
     }
 
+    footer div {
+        display: flex;
+        gap: 1rem;
+    }
+
     footer img {
         width: 30px;
         height: 30px;
     }
 
     footer a {
-        text-decoration: none; /* Removes underlines from social media links */
+        text-decoration: none;
     }
 
         footer a:hover {
